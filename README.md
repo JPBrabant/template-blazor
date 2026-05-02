@@ -27,3 +27,4 @@ Template and instructions for creating a web app using Blazor.
    dotnet sln add src/PascalCase.Api/PascalCase.Api.csproj
    dotnet sln add src/PascalCase.Web/PascalCase.Web.csproj
    ```
+8. Use the .vscode config in this repository to have an easy way to launch the project
