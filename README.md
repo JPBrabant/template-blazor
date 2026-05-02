@@ -25,6 +25,17 @@ Template and instructions for creating a web app using Blazor.
 7. Add projects to the solution:
    ```bash
    dotnet sln add src/PascalCase.Api/PascalCase.Api.csproj
+   
    dotnet sln add src/PascalCase.Web/PascalCase.Web.csproj
    ```
 8. Use the .vscode config in this repository to have an easy way to launch the project
+9. Add a common class library:
+   ```bash
+   dotnet new classlib --output src/PascalCase.Shared
+   
+   dotnet sln add src/PascalCase.Shared/PascalCase.Shared.csproj
+   
+   dotnet add src/PascalCase.Api/PascalCase.Api.csproj reference src/PascalCase.Shared/PascalCase.Shared.csproj
+   
+   dotnet add src/PascalCase.Web/PascalCase.Web.csproj reference src/PascalCase.Shared.csproj
+   ```
