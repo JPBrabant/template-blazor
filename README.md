@@ -39,3 +39,7 @@ Template and instructions for creating a web app using Blazor.
    
    dotnet add src/PascalCase.Web/PascalCase.Web.csproj reference src/PascalCase.Shared.csproj
    ```
+10. Add `Entity Framework Core` as a `NuGet` dependency
+   ```bash
+   dotnet add src/PascalCase.Api/PascalCase.Api.csproj package Microsoft.EntityFrameworkCore.SqlServer | Sqlite | PostgreSQL
+   ```
