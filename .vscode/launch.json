@@ -11,26 +11,13 @@
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    },
-    {
-      "name": "Web",
-      "type": "coreclr",
-      "request": "launch",
-      "program": "${workspaceFolder}/src/PascalCase.Web/bin/Debug/net10.0/PascalCase.Web.dll",
-      "cwd": "${workspaceFolder}/src/PascalCase.Web",
-      "preLaunchTask": "build-web",
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
     }
   ],
   "compounds": [
     {
       "name": "Full Stack",
-      "configurations": [
-        "API",
-        "Web"
-      ]
+      "configurations": ["API"],
+      "preLaunchTask": "run-web"
     }
   ]
 }

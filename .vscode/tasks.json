@@ -18,6 +18,31 @@
         "src/PascalCase.Web/PascalCase.Web.csproj"
       ],
       "type": "process"
+    },
+    {
+      "label": "run-web",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "src/PascalCase.Web/PascalCase.Web.csproj"
+      ],
+      "type": "process",
+      "isBackground": true
+    },
+    {
+      "label": "run-scraper-salle-andre-mathieu",
+      "command": "uv",
+      "args": [
+        "run",
+        "--project",
+        "src/PascalCase.Scraper.PythonProject",
+        "src/PascalCase.Scraper.PythonProject/main.py"
+      ],
+      "type": "process",
+      "problemMatcher": [
+        "$python"
+      ]
     }
   ]
 }

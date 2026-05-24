@@ -1,0 +1,4 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/src/PascalCase.Scraper.PythonProject/.venv/Scripts/python.exe",
+  "python.analysis.typeCheckingMode": "standard"
+}
