@@ -48,4 +48,4 @@ Template and instructions for creating a web app using Blazor.
 
 ## Handling connection to Azure resources
 
-Install `Az` and do an `az login` from the command line and/or install the `Azure resources` extension for VS Code and login from there. It will generate a token that will be automaticaly used by most Microsoft services and API. Like connecting to a database with `Authentication=Active Directory Default` as a connection string arg.
+Install `Az` and do an `az login` from the command line and/or install the `Azure resources` extension for VS Code and login from there. It will generate a token that will be automaticaly used by most Microsoft services and API. Like connecting to a database with `Authentication=Active Directory Default` as a connection string arg. It is important to close and reopen VS Code after connecting to Azure.
