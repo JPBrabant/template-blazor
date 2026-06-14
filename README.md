@@ -67,3 +67,13 @@ Install `Az` and do an `az login` from the command line and/or install the `Azur
    ALTER ROLE db_datareader ADD MEMBER [<app-name>];
    ALTER ROLE db_datawriter ADD MEMBER [<app-name>];
    ```
+
+## Enabling CI/CD from GitHub to Azure App Service
+
+1. **Get your IDs** — `az account show --query "{subscriptionId, tenantId}"`
+2. **Create app registration** — `az ad app create --display-name "my-app-oidc"`
+3. **Create service principal** — `az ad sp create --id <appId from step 2>`
+4. **Add federated credential** — link GitHub repo + branch to the app: `az ad app federated-credential create --id <appId> --parameters '{...issuer, subject, audiences...}'`
+5. **Grant Contributor role** — `az role assignment create --assignee <appId> --role Contributor --scope /subscriptions/.../resourceGroups/...`
+6. **Add 3 GitHub secrets** — `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID` (manually in repo settings)
+7. **Add to workflow** — `azure/login@v2` with OIDC params + `permissions: id-token: write` at the job level
